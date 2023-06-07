@@ -36,6 +36,20 @@ public class PersonApi {
         throw new NotFoundPeopleException();
     }
 
+    @DeleteMapping("/person/delete")
+    public Person deletePerson(@RequestBody Person deletePerson){
+        for(Person person1: person){
+            if(!person1.getHkid().equals(deletePerson.getHkid())){
+                continue;}
+                person.remove(person1);
+                return person1;
+            }
+        throw new NotFoundPeopleException();
+    }
+
+
+
+
 
 
 
